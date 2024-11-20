@@ -19,6 +19,8 @@
                     <th>Email</th>
                     <th>Salary</th>
                     <th>Date of Birth</th>
+
+                    <th>Action</th> <!--another column for action-->
                 </tr>
             </thead>
             <tbody>
@@ -35,8 +37,13 @@
                         <td th:utext="${#dates.format(person.dob, 'dd/MM/yyyy')}"></td>
                         <!-- ${#dates.format(date, 'dd/MMM/yyyy HH:mm')} -->
                         
+                        <td><a class = "btn btn-danger" th:href="@{/persons/delete/{person-id}(person-id=${person.id})}">Delete</a></td> <!--add a button to delete things-->
+                        <!--include path variable as stated in PersonController.java-->
+                        
+                        <td><a class = "btn btn-success" th:href="@{/persons/update/{person-id}(person-id=${person.id})}">Edit</a></td>
 
                     </p>
+
                     <p th:if = "${state.size le 0}">
                         No record found!
                     </p>

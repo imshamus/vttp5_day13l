@@ -19,6 +19,11 @@ public class PersonService // 1:1, actually redudant since only 1 repo, in actua
         return personRepo.findAll();
     }
 
+    public Person findById(String personId) 
+    {
+        return personRepo.findById(personId);
+    }
+
     public Boolean create(Person person)
     {
         return personRepo.create(person);

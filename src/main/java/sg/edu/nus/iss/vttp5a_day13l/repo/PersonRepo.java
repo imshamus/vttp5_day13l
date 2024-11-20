@@ -17,7 +17,7 @@ public class PersonRepo {
     // private List<Person> persons; // obj not instantiated yet
     private List<Person> persons = new ArrayList<>();
 
-    public PersonRepo() throws ParseException
+    public PersonRepo() throws ParseException // this is a simulated that we created
     {
         String birthDate = "1988-12-01"; // date treated as string first, a bit mafan
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -30,10 +30,20 @@ public class PersonRepo {
         // no. 19 appendix b, https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#dates, see edit in list.html
 
     }
+
+    // Create reading from a csv file
+
+    // Create writing to a csv file
     
     public List<Person> findAll()
     {
         return persons;
+    }
+
+    public Person findById(String personId) // returns me person that i found
+    {
+        Person foundPerson = persons.stream().filter(p -> p.getId().equals(personId)).findFirst().get();
+        return foundPerson;
     }
 
     public Boolean create(Person person)

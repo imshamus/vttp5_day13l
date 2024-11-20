@@ -17,15 +17,15 @@ import jakarta.validation.constraints.Size;
 public class Person 
 {
     // Attributes & their annotations (constraints)
-    @NotNull(message = "id must be auto generated.")
+    // @NotNull(message = "id must be auto generated.")
     private String id;
 
     @NotEmpty(message = "First name is mandatory.")
-    @Size(min = 5, max = 60, message = "First name must be between 5-60 characters.")
+    @Size(min = 2, max = 60, message = "First name must be between 2-60 characters.")
     private String firstName;
 
     @NotEmpty(message = "Last name is mandatory.")
-    @Size(min = 5, max = 60, message = "Last name must be between 5-60 characters.")
+    @Size(min = 2, max = 60, message = "Last name must be between 2-60 characters.")
     private String lastName;
 
     @Min(value = 1500, message = "Min salary starts from 1500.")
