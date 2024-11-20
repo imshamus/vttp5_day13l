@@ -23,7 +23,7 @@ public class PersonRepo {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date birthday = sdf.parse(birthDate);
         
-        persons.add(new Person("James", "Dyson", 99999, "James@Dyson.com", birthday));
+        persons.add(new Person("James", "Dyson", 99999, "James@Dyson.com", birthday, "92394905", 672839));
 
         // When displayed, format would not be what we want, like this "Thu Dec 01 00:00:00 GMT+08:00 1988", use thymeleaf date format (google search)
         // thymeleaf documentation, will come out one, format in html page
