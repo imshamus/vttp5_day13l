@@ -50,7 +50,7 @@ public class PersonController
             return "create"; // stays on the same page
         }
 
-        Person p = new Person(person.getFirstName(), person.getLastName(), person.getSalary(), person.getEmail(), person.getDob());
+        Person p = new Person(person.getFirstName(), person.getLastName(), person.getSalary(), person.getEmail(), person.getDob(), person.getTelephone(), person.getPostalCode());
         personService.create(p);
         return "redirect:/persons"; // redirect, refresh, repopulate
     }
